@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduConsult | Admission Counseling</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Find Your Dream Career</h1>
+            <p>Expert Counseling for MBA, BTech, Law, and more</p>
+            
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="courseSearch" placeholder="Search courses (e.g. MBA, Design)..." onkeyup="filterCourses()">
+            </div>
+        </div>
+    </header>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout container">
+        <section class="courses-grid" id="courseGrid">
+            <div class="card" data-name="mba">
+                <i class="fas fa-briefcase icon blue"></i>
+                <h3>MBA</h3>
+                <p>Master of Business Administration</p>
+                <span class="tag">Post-Grad</span>
+            </div>
+            <div class="card" data-name="btech">
+                <i class="fas fa-microchip icon red"></i>
+                <h3>B.Tech</h3>
+                <p>Engineering & Technology</p>
+                <span class="tag">Undergrad</span>
+            </div>
+            <div class="card" data-name="bba">
+                <i class="fas fa-chart-line icon green"></i>
+                <h3>BBA</h3>
+                <p>Bachelor of Business Admin</p>
+                <span class="tag">Undergrad</span>
+            </div>
+            <div class="card" data-name="bca">
+                <i class="fas fa-laptop-code icon purple"></i>
+                <h3>BCA</h3>
+                <p>Computer Applications</p>
+                <span class="tag">Undergrad</span>
+            </div>
+            <div class="card" data-name="law">
+                <i class="fas fa-gavel icon dark"></i>
+                <h3>Law</h3>
+                <p>LLB & Integrated Law</p>
+                <span class="tag">Professional</span>
+            </div>
+            <div class="card" data-name="design">
+                <i class="fas fa-palette icon pink"></i>
+                <h3>Design</h3>
+                <p>Fashion, UI/UX, Interior</p>
+                <span class="tag">Creative</span>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <div class="inquiry-box">
+                <h3><i class="fas fa-comments"></i> Get Free Consultation</h3>
+                <form id="admissionForm">
+                    <div class="form-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-phone input-icon"></i>
+                        <input type="tel" name="number" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt input-icon"></i>
+                        <input type="text" name="location" placeholder="Your Location" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-rupee-sign input-icon"></i>
+                        <select name="budget" required>
+                            <option value="">Select Budget Range</option>
+                            <option value="0-5">0-5 Lacs</option>
+                            <option value="5-10">5-10 Lacs</option>
+                            <option value="10-15">10-15 Lacs</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-graduation-cap input-icon"></i>
+                        <input type="text" name="preferred_location" placeholder="Preferred Study Location" required>
+                    </div>
+
+                </form>
+
+                <div class="action-buttons">
+                    <a href="tel:8527787957" class="btn-call">
+                        <i class="fas fa-phone-alt"></i> Call Now
+                    </a>
+                    <a href="https://wa.me/8527787957" class="btn-wa">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Now
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Floating CTA Button -->
+    <div class="floating-cta" onclick="openModal()">
+        <i class="fas fa-comments"></i>
+        <span>Get Free Consultation</span>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="consultationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-comments"></i> Free Consultation</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Get expert guidance for your career path. Fill out the form below and our counselors will contact you within 24 hours.</p>
+                <form id="modalForm" class="enquiry-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-phone input-icon"></i>
+                            <input type="tel" name="number" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-map-marker-alt input-icon"></i>
+                            <input type="text" name="location" placeholder="Your Location" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <i class="fas fa-rupee-sign input-icon"></i>
+                            <select name="budget" required>
+                                <option value="">Select Budget Range</option>
+                                <option value="0-5">0-5 Lacs</option>
+                                <option value="5-10">5-10 Lacs</option>
+                                <option value="10-15">10-15 Lacs</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-graduation-cap input-icon"></i>
+                            <input type="text" name="preferred_location" placeholder="Preferred Study Location" required>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-actions">
+                    <a href="tel:8527787957" class="btn-call-modal">
+                        <i class="fas fa-phone-alt"></i> Call Now: 8527787957
+                    </a>
+                    <a href="https://wa.me/8527787957" class="btn-wa-modal">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container container">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <span class="icon-arrow"></span>
+                        <span class="icon-point"></span>
+                    </div>
+                    <div class="logo-text">
+                        <span class="career">Career</span><span class="grow">Grow</span>
+                    </div>
+                </div>
+                <p>Helping you find the right course, college & career guidance.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Course Counseling</a></li>
+                        <li><a href="#">University Selection</a></li>
+                        <li><a href="#">Application Support</a></li>
+                        <li><a href="#">Scholarship Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Enquiry</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:8527787957">+91 85277 87957</a></li>
+                        <li><a href="mailto:info@careerconsult.com">info@careerconsult.com</a></li>
+                        <li>123 Education Lane, City</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> CareerGrow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
